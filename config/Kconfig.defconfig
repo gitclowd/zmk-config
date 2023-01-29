@@ -1,0 +1,27 @@
+
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+if SHIELD_GENESYS_LEFT
+
+config ZMK_KEYBOARD_NAME
+	default "Genesys"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+	default y
+
+endif
+
+if SHIELD_GENESYS_LEFT || SHIELD_GENESYS_RIGHT
+
+config ZMK_SPLIT
+	default y
+	
+if ZMK_BACKLIGHT
+
+config LED_GPIO
+    default y
+
+endif # ZMK_BACKLIGHT
+
+endif 
